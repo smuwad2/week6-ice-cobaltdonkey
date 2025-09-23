@@ -3,10 +3,14 @@
         data() {
             return {
                 // Add code here
+                isActive: false
             }
         },
         methods: { 
    			// Add code here
+            changeColour() {
+                this.isActive = !this.isActive;
+            }
 		}
     }
 </script>
@@ -19,7 +23,12 @@
             div ID : {{id}} 
         </div>
         
-        <button type="button">Change Color</button>
+        <button type="button" class="btn" 
+        :class="{ 
+            'btn-secondary': !isActive, 'btn-danger': isActive, 
+            'blueBox': !isActive, 'redBox': isActive
+        }" 
+        @click="changeColour">Change Color</button>
     </div>
 
 </template>
