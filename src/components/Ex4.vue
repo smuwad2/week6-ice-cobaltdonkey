@@ -1,9 +1,10 @@
 <script>
-    // commit
+    // commit 2
     export default { 
         data() {
             return {
                 // Add code here
+                id: "demo1",
                 isActive: false
             }
         },
@@ -20,16 +21,15 @@
     
     <!-- Modify code here -->
     <div class="container">
-        <div v-bind:id="id" class="m-2">
-            div ID : {{id}} 
+        <div id="demo1" class="m-2" :class="{ blueBox: !isActive, redBox: isActive }"> 
+            div ID : demo1
         </div>
-        
+
         <button type="button" class="btn" 
-        :class="{ 
-            'btn-secondary': !isActive, 'btn-danger': isActive, 
-            'blueBox': !isActive, 'redBox': isActive
-        }" 
-        @click="changeColour">Change Color</button>
+        :class="{ 'btn-primary': !isActive, 'btn-danger': isActive }"
+        @click="changeColour">
+            Change Color
+        </button>
     </div>
 
 </template>
